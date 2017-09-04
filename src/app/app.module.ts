@@ -31,6 +31,7 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    FormsModule,
     HttpModule
   ],
   providers: [shared],

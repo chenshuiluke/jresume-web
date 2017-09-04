@@ -1,26 +1,51 @@
+<h3 class="title">Personal Details</h3>
 <div class="row gutters">
     <div class="col col-3">
         <div class="form-item">
             <label>Name</label>
-            <input type="text" class="w100" (input)="resume.person.name = $event.target.value">
+            <input type="text" class="w100" [ngModel]="resume.person.name" (ngModelChange)="resume.person.name = $event">
         </div>
     </div>
     <div class="col col-3">
         <div class="form-item">
             <label>Email</label>
-            <input type="text" class="w100" (input)="resume.person.email = $event.target.value">
+            <input type="text" class="w100" [ngModel]="resume.person.email" (ngModelChange)="resume.person.email = $event">
         </div>        
     </div>
     <div class="col col-3">
         <div class="form-item">
             <label>Phone Number</label>
-            <input type="text" class="w100" (input)="resume.person.phoneNumber = $event.target.value">
+            <input type="text" class="w100" [ngModel]="resume.person.phoneNumber" (ngModelChange)="resume.person.phoneNumber = $event">
         </div>        
     </div>   
     <div class="col col-3">
         <div class="form-item">
             <label>Address</label>
-            <input type="text" class="w100" (input)="resume.person.address = $event.target.value">
+            <input type="text" class="w100" [ngModel]="resume.person.address" (ngModelChange)="resume.person.address">
         </div>        
     </div>        
+</div>
+
+<div class="row gutters">
+    <div class="col col-6">
+        <div class="form-item">
+            <label>Website</label>
+            <input type="text" class="w100" [ngModel]="resume.person.website" (ngModelChange)="resume.person.website = $event">
+        </div>
+    </div>
+    <div class="col col-6">
+        <div class="form-item">
+            <label>Job Title</label>
+            <input type="text" class="w100" [ngModel]="resume.person.jobTitle" (ngModelChange)="resume.person.jobTitle = $event">
+        </div>        
+    </div>       
+</div>
+
+<div class="row gutters">
+    <div class="col col-12">
+        <div class="form-item">
+            <label>Objective</label>
+            <input type="text" class="w100" [ngModel]="resume.person.objective" (ngModelChange)="resume.person.objective = $event">
+        </div>
+    </div>
 </div>
