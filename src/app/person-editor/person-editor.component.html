@@ -1,0 +1,26 @@
+<div class="row gutters">
+    <div class="col col-3">
+        <div class="form-item">
+            <label>Name</label>
+            <input type="text" class="w100" (input)="resume.person.name = $event.target.value">
+        </div>
+    </div>
+    <div class="col col-3">
+        <div class="form-item">
+            <label>Email</label>
+            <input type="text" class="w100" (input)="resume.person.email = $event.target.value">
+        </div>        
+    </div>
+    <div class="col col-3">
+        <div class="form-item">
+            <label>Phone Number</label>
+            <input type="text" class="w100" (input)="resume.person.phoneNumber = $event.target.value">
+        </div>        
+    </div>   
+    <div class="col col-3">
+        <div class="form-item">
+            <label>Address</label>
+            <input type="text" class="w100" (input)="resume.person.address = $event.target.value">
+        </div>        
+    </div>        
+</div>

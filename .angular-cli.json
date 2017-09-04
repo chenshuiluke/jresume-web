@@ -17,11 +17,16 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "",
       "styles": [
-        "styles.css"
+        "assets/css/kube.min.css",
+        "styles.css",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "assets/js/kube.min.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
