@@ -2,3 +2,35 @@
 body{
     padding:20px;
 }
+
+.collapse-toggle{
+    background: #f4f4f4;
+    background-color: rgb(244, 244, 244);
+    background-image: none;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto auto;
+
+    padding: 8px 0px;
+    margin-bottom: 1px;
+    line-height: 24px;
+    display:block;
+}
+
+form{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.collapse-box{
+    padding: 24px 32px 1px;
+    margin-bottom: 1px;    
+}
+
+.button:not(.crud){
+    margin-top: 15px;
+}
