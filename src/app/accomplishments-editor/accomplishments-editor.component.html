@@ -1,6 +1,6 @@
 
 <div>
-  <p *ngIf="!resume.accomplishments">No accomplishments. Please add some.</p>
+  <p *ngIf="!resume.accomplishments || resume.accomplishments.length === 0">No accomplishments. Please add some.</p>
   <div class="row gutter" *ngFor="let accomplishment of resume.accomplishments; let i = index; trackBy:customTrackBy">
       <div class="col col-11">
           <div class="form-item">
@@ -11,7 +11,5 @@
           <button class="button secondary inverted crud" (click)="resume.accomplishments.pop(resume.accomplishments[i])"><i class="fa fa-trash-o"></i></button>
       </div>
   </div>
-
-  
 </div>
 <button class="button" (click)="addAccomplishment()">Add Accomplishment</button>
