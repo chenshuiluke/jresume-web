@@ -9,6 +9,7 @@ import { shared } from './shared.provider';
 import { PersonEditorComponent } from './person-editor/person-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AccomplishmentsEditorComponent } from './accomplishments-editor/accomplishments-editor.component';
 const routes:Routes = [
   {
     path: '', redirectTo:'/editor', pathMatch:'full'
@@ -26,7 +27,8 @@ const routes:Routes = [
     AppComponent,
     ResumePreviewComponent,
     ResumeEditorComponent,
-    PersonEditorComponent
+    PersonEditorComponent,
+    AccomplishmentsEditorComponent
   ],
   imports: [
     BrowserModule,
