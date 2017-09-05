@@ -1,23 +1,15 @@
-<button class="ui labeled button" [routerLink]="'/editor'">
-    <div class="ui blue button">
-        <i class="text cursor icon"></i> 
-    </div>
-    <span class="ui basic blue label">Edit</span>
+<button class="ui green button" [routerLink]="'/editor'">
+    <i class="text cursor icon"></i> 
+    Edit
 </button>
-<button class="ui labeled button" [routerLink]="'/preview'" (click)="preview()">
-    <div class="ui green button">
-        <i class="play icon"></i>
-    </div>
-    
-    <span class="ui basic green label">Preview</span>
+<button class="ui green button" [routerLink]="'/preview'" (click)="preview()">
+    <i class="play icon"></i>
+    Preview
 </button>
 
-<button class="ui labeled button" (click)="download()">
-    <div class="ui olive button">
+<button class="ui green button" (click)="download()">
         <i class="download icon"></i>
-    </div>
-    
-    <span class="ui basic olive label">Download</span>
+        Download
 </button>
 <div class="ui active loader text" *ngIf="loading">Downloading...</div>
 <router-outlet></router-outlet>
