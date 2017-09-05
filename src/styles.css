@@ -41,3 +41,7 @@ iframe{
     height: 100%;
     margin-top:10px;    
 }
+
+#github-banner-img{
+    z-index:10;
+}
