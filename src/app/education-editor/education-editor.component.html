@@ -1,6 +1,20 @@
-<div data-component="collapse">
-    <h3><a href="#school-box" class="collapse-toggle">School History</a></h3>
-    <school-editor id="school-box"  class="collapse-box hide"></school-editor>
-    <h3><a href="#examination-box" class="collapse-toggle">Examination History</a></h3>
-    <examination-editor id="examination-box" class="collapse-box hide"></examination-editor>
-</div>
+<sui-accordion [closeOthers]="false" class="styled fluid">
+    <sui-accordion-panel>
+        <div title>
+            <i class="dropdown icon"></i>
+            School History
+        </div>
+        <div content>
+            <school-editor></school-editor>
+        </div>          
+    </sui-accordion-panel>  
+    <sui-accordion-panel>
+        <div title>
+            <i class="dropdown icon"></i>
+            Examinations
+        </div>
+        <div content>
+            <examination-editor></examination-editor>
+        </div>            
+    </sui-accordion-panel>
+</sui-accordion>

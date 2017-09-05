@@ -19,13 +19,12 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "",
       "styles": [
-        "assets/css/kube.min.css",
+        "../node_modules/semantic-ui-css/semantic.min.css",
         "styles.css",
         "../node_modules/font-awesome/css/font-awesome.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.min.js",
-        "assets/js/kube.min.js"
+        "../node_modules/semantic-ui-css/semantic.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

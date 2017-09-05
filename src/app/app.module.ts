@@ -13,6 +13,9 @@ import { AccomplishmentsEditorComponent } from './accomplishments-editor/accompl
 import { EducationEditorComponent } from './education-editor/education-editor.component';
 import { ExaminationEditorComponent } from './examination-editor/examination-editor.component';
 import { SchoolEditorComponent } from './school-editor/school-editor.component';
+
+import {SuiModule} from 'ng2-semantic-ui';
+
 const routes:Routes = [
   {
     path: '', redirectTo:'/editor', pathMatch:'full'
@@ -38,6 +41,7 @@ const routes:Routes = [
   ],
   imports: [
     BrowserModule,
+    SuiModule,
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule
