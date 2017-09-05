@@ -8,7 +8,7 @@ import { Resume } from '../models/resume.model';
 })
 export class PersonEditorComponent implements OnInit {
 
-  constructor(@Inject(Resume) private resume:Resume) { }
+  constructor(@Inject(Resume) public resume:Resume) { }
 
   ngOnInit() {
   }

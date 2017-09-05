@@ -16,6 +16,7 @@ import { SchoolEditorComponent } from './school-editor/school-editor.component';
 
 import {SuiModule} from 'ng2-semantic-ui';
 import { SubjectEditorComponent } from './subject-editor/subject-editor.component';
+import { JobWorkEditorComponent } from './job-work-editor/job-work-editor.component';
 
 const routes:Routes = [
   {
@@ -39,7 +40,8 @@ const routes:Routes = [
     EducationEditorComponent,
     ExaminationEditorComponent,
     SchoolEditorComponent,
-    SubjectEditorComponent
+    SubjectEditorComponent,
+    JobWorkEditorComponent
   ],
   imports: [
     BrowserModule,

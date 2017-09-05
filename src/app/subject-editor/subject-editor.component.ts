@@ -8,7 +8,7 @@ import { Subject } from '../models/subject.model';
 })
 export class SubjectEditorComponent implements OnInit {
   @Input('examination_index') examination_index:number;
-  constructor(@Inject(Resume) private resume:Resume) { }
+  constructor(@Inject(Resume) public resume:Resume) { }
 
   ngOnInit() {
   }

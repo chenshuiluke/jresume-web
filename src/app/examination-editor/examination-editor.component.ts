@@ -9,7 +9,7 @@ import { Examination } from '../models/examination.model';
 })
 export class ExaminationEditorComponent implements OnInit {
 
-  constructor(@Inject(Resume) private resume:Resume) { }
+  constructor(@Inject(Resume) public resume:Resume) { }
 
   ngOnInit() {
   }

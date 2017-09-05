@@ -9,7 +9,7 @@ import { School } from '../models/school.model';
 })
 export class SchoolEditorComponent implements OnInit {
 
-  constructor(@Inject(Resume) private resume:Resume) { }
+  constructor(@Inject(Resume) public resume:Resume) { }
 
   ngOnInit() {
   }

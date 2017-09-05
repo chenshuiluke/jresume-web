@@ -1,32 +1,41 @@
 <form method="post" action="" class="ui form">
   <sui-accordion [closeOthers]="false" class="styled fluid">
-      <sui-accordion-panel [isOpen]="true">
-          <div title>
-              <i class="dropdown icon"></i>
-              Personal Details
-          </div>
-          <div content>
-              <person-editor></person-editor>
-          </div>          
-      </sui-accordion-panel>
-      <sui-accordion-panel>
-          <div title>
-              <i class="dropdown icon"></i>
-              Accomplishments
-          </div>
-          <div content>
-              <accomplishments-editor></accomplishments-editor>
-          </div>          
-      </sui-accordion-panel>    
-      <sui-accordion-panel>
+    <sui-accordion-panel [isOpen]="true">
+        <div title>
+            <i class="dropdown icon"></i>
+            Personal Details
+        </div>
+        <div content>
+            <person-editor></person-editor>
+        </div>          
+        </sui-accordion-panel>
+    <sui-accordion-panel>
+        <div title>
+            <i class="dropdown icon"></i>
+            Accomplishments
+        </div>
+        <div content>
+            <accomplishments-editor></accomplishments-editor>
+        </div>          
+    </sui-accordion-panel>    
+    <sui-accordion-panel>
+        <div title>
+            <i class="dropdown icon"></i>
+            Education
+        </div>
+        <div content>
+            <education-editor></education-editor>
+        </div>          
+    </sui-accordion-panel>    
+    <sui-accordion-panel>
             <div title>
                 <i class="dropdown icon"></i>
-                Education
+                Professional Work
             </div>
             <div content>
-                <education-editor></education-editor>
+                <job-work-editor></job-work-editor>
             </div>          
-        </sui-accordion-panel>           
+        </sui-accordion-panel>               
   </sui-accordion>
   <!-- <h3><a href="#personal-details-box" class="collapse-toggle">Personal Details</a></h3>
   
