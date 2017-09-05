@@ -1,3 +1,30 @@
-<p>
-  school-editor works!
-</p>
+<div *ngIf="resume.education && resume.education.schools && resume.education.schools.length > 0">
+  <div *ngFor="let school of resume.education.schools; let i = index; trackBy:customTrackBy" class="ui segment">
+    <div class="ui four fields">
+      <div class="ui field">
+        <label>Name</label>
+        <input type="text" [ngModel]="resume.education.schools[i].name" (ngModelChange)="resume.education.schools[i].name = $event">
+      </div>
+      <div class="ui field">
+          <label>Start Date</label>
+          <input type="text" [ngModel]="resume.education.schools[i].startDate" (ngModelChange)="resume.education.schools[i].startDate = $event">
+      </div>  
+      <div class="ui field">
+          <label>End Date</label>
+          <input type="text" [ngModel]="resume.education.schools[i].endDate" (ngModelChange)="resume.education.schools[i].endDate = $event">
+      </div> 
+      <div class="ui field">
+          <label>GPA</label>
+          <input type="text" [ngModel]="resume.education.schools[i].gpa" (ngModelChange)="resume.education.schools[i].gpa = $event">
+      </div>               
+    </div>
+    <div class="ui field">
+        <label>Summary</label>
+        <textarea [ngModel]="resume.education.schools[i].summary" (ngModelChange)="resume.education.schools[i].summary = $event"></textarea>
+    </div>    
+    <div class="ui fluid red button" (click)="deleteSchool(i)">Delete School</div>
+  </div>
+  
+</div>
+
+<div class="ui green button" (click)="addSchool()">Add School</div>

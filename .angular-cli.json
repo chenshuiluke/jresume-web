@@ -20,11 +20,9 @@
       "prefix": "",
       "styles": [
         "../node_modules/semantic-ui-css/semantic.min.css",
-        "styles.css",
-        "../node_modules/font-awesome/css/font-awesome.css"
+        "styles.css"
       ],
       "scripts": [
-        "../node_modules/semantic-ui-css/semantic.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

@@ -7,8 +7,8 @@
           </div>
       </div>
       <div class="one wide column">
-          <button class="ui red icon button crud" (click)="resume.accomplishments.pop(resume.accomplishments[i])">
-            <i class="fa fa-trash-o"></i>
+          <button class="ui red icon button crud" (click)="resume.accomplishments.splice(i,1)">
+            <i class="ui trash icon"></i>
           </button>
       </div>
   </div>

@@ -1,3 +1,23 @@
-<p>
-  examination-editor works!
-</p>
+<div *ngIf="resume.education && resume.education.examinations && resume.education.examinations.length > 0">
+    <div *ngFor="let school of resume.education.examinations; let i = index; trackBy:customTrackBy" class="ui segment">
+      <div class="ui three fields">
+        <div class="ui field">
+          <label>Name</label>
+          <input type="text" [ngModel]="resume.education.examinations[i].name" (ngModelChange)="resume.education.examinations[i].name = $event">
+        </div>
+        <div class="ui field">
+            <label>Start Date</label>
+            <input type="text" [ngModel]="resume.education.examinations[i].startDate" (ngModelChange)="resume.education.examinations[i].startDate = $event">
+        </div>  
+        <div class="ui field">
+            <label>End Date</label>
+            <input type="text" [ngModel]="resume.education.examinations[i].endDate" (ngModelChange)="resume.education.examinations[i].endDate = $event">
+        </div>          
+      </div>
+      <subject-editor [examination_index]="i"></subject-editor>    
+      <div class="ui fluid red button" (click)="deleteExamination(i)">Delete Examination</div>
+    </div>
+    
+  </div>
+  
+  <div class="ui green button" (click)="addExamination()">Add Examination</div>

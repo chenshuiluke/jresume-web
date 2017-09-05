@@ -1,0 +1,27 @@
+<sui-accordion [closeOthers]="false" class="styled fluid">
+    <sui-accordion-panel>
+        <div title>
+            <i class="dropdown icon"></i>
+            Subjects
+        </div>
+        <div content>
+          <div *ngIf="resume.education.examinations[examination_index].subjects && resume.education.examinations[examination_index].subjects.length > 0">
+            <div class="ui segment" *ngFor="let subject of resume.education.examinations[examination_index].subjects; let i = index; trackBy:customTrackBy">
+              <div class="ui two fields">
+                <div class="ui field">
+                  <label>Name</label>
+                  <input type="text" [ngModel]="resume.education.examinations[examination_index].subjects[i].name" (ngModelChange)="resume.education.examinations[examination_index].subjects[i].name = $event">
+                </div>
+                <div class="ui field">
+                    <label>Result</label>
+                    <input type="text" [ngModel]="resume.education.examinations[examination_index].subjects[i].result" (ngModelChange)="resume.education.examinations[examination_index].subjects[i].result = $event">
+                </div>                
+              </div>
+              <div class="ui fluid red button" (click)="deleteSubject(i)">Delete Subject</div>
+            </div>
+            
+          </div>
+          <div class="ui green button" (click)="addSubject()">Add Subject</div>
+        </div>          
+    </sui-accordion-panel> 
+</sui-accordion>  
