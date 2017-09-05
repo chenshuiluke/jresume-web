@@ -10,6 +10,9 @@ import { PersonEditorComponent } from './person-editor/person-editor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AccomplishmentsEditorComponent } from './accomplishments-editor/accomplishments-editor.component';
+import { EducationEditorComponent } from './education-editor/education-editor.component';
+import { ExaminationEditorComponent } from './examination-editor/examination-editor.component';
+import { SchoolEditorComponent } from './school-editor/school-editor.component';
 const routes:Routes = [
   {
     path: '', redirectTo:'/editor', pathMatch:'full'
@@ -28,7 +31,10 @@ const routes:Routes = [
     ResumePreviewComponent,
     ResumeEditorComponent,
     PersonEditorComponent,
-    AccomplishmentsEditorComponent
+    AccomplishmentsEditorComponent,
+    EducationEditorComponent,
+    ExaminationEditorComponent,
+    SchoolEditorComponent
   ],
   imports: [
     BrowserModule,
