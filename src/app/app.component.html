@@ -12,4 +12,12 @@
     <span class="ui basic green label">Preview</span>
 </button>
 
+<button class="ui labeled button" (click)="download()">
+    <div class="ui olive button">
+        <i class="download icon"></i>
+    </div>
+    
+    <span class="ui basic olive label">Download</span>
+</button>
+<div class="ui active loader text" *ngIf="loading">Downloading...</div>
 <router-outlet></router-outlet>

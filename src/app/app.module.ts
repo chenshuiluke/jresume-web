@@ -17,6 +17,8 @@ import { SchoolEditorComponent } from './school-editor/school-editor.component';
 import {SuiModule} from 'ng2-semantic-ui';
 import { SubjectEditorComponent } from './subject-editor/subject-editor.component';
 import { JobWorkEditorComponent } from './job-work-editor/job-work-editor.component';
+import { HighlightEditorComponent } from './highlight-editor/highlight-editor.component';
+import { FileSaverModule } from 'ngx-filesaver';
 
 const routes:Routes = [
   {
@@ -41,14 +43,16 @@ const routes:Routes = [
     ExaminationEditorComponent,
     SchoolEditorComponent,
     SubjectEditorComponent,
-    JobWorkEditorComponent
+    JobWorkEditorComponent,
+    HighlightEditorComponent
   ],
   imports: [
     BrowserModule,
     SuiModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    HttpModule
+    HttpModule,
+    FileSaverModule
   ],
   providers: [shared],
   bootstrap: [AppComponent]

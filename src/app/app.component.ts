@@ -3,6 +3,7 @@ import { Resume } from './models/resume.model';
 import { ResumeResponse } from './models/resume-response.model';
 import { Http, Response } from '@angular/http';
 import { environment } from '../environments/environment';
+import { FileSaverService } from 'ngx-filesaver';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,10 +11,12 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
   title = 'app';
+  loading:boolean = false;
 
   constructor(@Inject(Resume) private resume:Resume, 
   @Inject(ResumeResponse) private resume_response:ResumeResponse, 
-  private http:Http){
+  private http:Http,
+  private _FileSaverService: FileSaverService){
 
   }
 
@@ -39,5 +42,17 @@ export class AppComponent {
         console.log(response.text());
         this.resume_response.setHtml(response.text());
       });
+  }
+
+  download(){
+    this.clearEmptyResumeParams(this.resume);
+    console.log(JSON.stringify(this.resume));
+    this.loading = true;
+    this.http.post(`${environment.host}${environment.resume_url}`, this.resume)
+      .subscribe((response:Response) => {
+        console.log(response.text());
+        this.loading=false;
+        this._FileSaverService.save((<any>response)._body, "webresume.html");
+      });    
   }
 }
