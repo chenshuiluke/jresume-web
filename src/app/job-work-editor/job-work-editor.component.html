@@ -22,6 +22,7 @@
     <label>Summary</label>
     <textarea [ngModel]="resume.jobWork[i].summary" (ngModelChange)="resume.jobWork[i].summary = $event"></textarea>
   </div>
+  <highlight-editor [item]="resume.jobWork[i]"></highlight-editor>
   <div class="ui fluid red button" (click)="deleteJobWork(i)">Delete Professional Work</div>
  </div>
 </div>
