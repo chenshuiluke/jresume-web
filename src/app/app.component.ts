@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Resume } from './models/resume.model';
 import { ResumeResponse } from './models/resume-response.model';
-import { Http, Response } from '@angular/http';
+import { Http, Response, RequestOptions, ResponseContentType } from '@angular/http';
 import { environment } from '../environments/environment';
 import { FileSaverService } from 'ngx-filesaver';
 @Component({
@@ -44,7 +44,7 @@ export class AppComponent {
       });
   }
 
-  download(){
+  downloadHTML(){
     this.clearEmptyResumeParams(this.resume);
     console.log(JSON.stringify(this.resume));
     this.loading = true;
@@ -55,4 +55,19 @@ export class AppComponent {
         this._FileSaverService.save((<any>response)._body, "webresume.html");
       });    
   }
+
+  downloadPDF(){
+    this.clearEmptyResumeParams(this.resume);
+    console.log(JSON.stringify(this.resume));
+    this.loading = true;
+    let options = new RequestOptions({
+      responseType: ResponseContentType.Blob // 这里必须是Blob类型
+    });
+    this.http.post(`${environment.host}${environment.pdf_resume_url}`, this.resume, options)
+      .subscribe((response:Response) => {
+        console.log(response.text());
+        this.loading=false;
+        this._FileSaverService.save((<any>response)._body, "webresume.pdf");
+      });    
+  }  
 }

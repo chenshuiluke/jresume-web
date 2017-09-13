@@ -6,5 +6,6 @@
 export const environment = {
   production: false,
   host:"http://localhost:8080",
-  resume_url:"/webresume"
+  resume_url:"/webresume/html",
+  pdf_resume_url: "/webresume/pdf"
 };

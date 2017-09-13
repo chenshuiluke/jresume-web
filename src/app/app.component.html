@@ -7,9 +7,13 @@
     Preview
 </button>
 
-<button class="ui green button" (click)="download()">
+<button class="ui green button" (click)="downloadHTML()">
         <i class="download icon"></i>
-        Download
+        Download HTML
+</button>
+<button class="ui green button" (click)="downloadPDF()">
+    <i class="download icon"></i>
+    Download PDF
 </button>
 <div class="ui active loader text" *ngIf="loading">Downloading...</div>
 <router-outlet></router-outlet>
