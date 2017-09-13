@@ -1,0 +1,30 @@
+<div *ngIf="resume.volunteerWork && resume.volunteerWork.length > 0">
+  <div class="ui segment" *ngFor="let volunteerWork of resume.volunteerWork; let i = index; trackBy:customTrackBy">
+   <div class="ui four fields">
+     <div class="ui field">
+       <label>Company</label>
+       <input [ngModel]="resume.volunteerWork[i].company" (ngModelChange)="resume.volunteerWork[i].company = $event">
+     </div>
+     <div class="ui field">
+       <label>Position</label>
+       <input [ngModel]="resume.volunteerWork[i].position" (ngModelChange)="resume.volunteerWork[i].position = $event">
+     </div>  
+     <div class="ui field">
+       <label>Start Date</label>
+       <input [ngModel]="resume.volunteerWork[i].startDate" (ngModelChange)="resume.volunteerWork[i].startDate = $event">
+     </div>  
+     <div class="ui field">
+       <label>End Date</label>
+       <input [ngModel]="resume.volunteerWork[i].endDate" (ngModelChange)="resume.volunteerWork[i].endDate = $event">
+     </div>              
+   </div>
+   <div class="ui field">
+     <label>Summary</label>
+     <textarea [ngModel]="resume.volunteerWork[i].summary" (ngModelChange)="resume.volunteerWork[i].summary = $event"></textarea>
+   </div>
+   <highlight-editor [item]="resume.volunteerWork[i]"></highlight-editor>
+   <keyword-editor [item]="resume.volunteerWork[i]"></keyword-editor>
+   <div class="ui fluid red button" (click)="deleteVolunteerWork(i)">Delete Volunteer Work</div>
+  </div>
+ </div>
+ <div class="ui green button" (click)="addVolunteerWork()">Add Volunteer Work</div>
