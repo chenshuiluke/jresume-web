@@ -19,6 +19,7 @@ import { SubjectEditorComponent } from './subject-editor/subject-editor.componen
 import { JobWorkEditorComponent } from './job-work-editor/job-work-editor.component';
 import { HighlightEditorComponent } from './highlight-editor/highlight-editor.component';
 import { FileSaverModule } from 'ngx-filesaver';
+import { KeywordEditorComponent } from './keyword-editor/keyword-editor.component';
 
 const routes:Routes = [
   {
@@ -44,7 +45,8 @@ const routes:Routes = [
     SchoolEditorComponent,
     SubjectEditorComponent,
     JobWorkEditorComponent,
-    HighlightEditorComponent
+    HighlightEditorComponent,
+    KeywordEditorComponent
   ],
   imports: [
     BrowserModule,

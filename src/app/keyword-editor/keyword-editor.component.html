@@ -1,0 +1,24 @@
+<sui-accordion [closeOthers]="false" class="styled fluid">
+  <sui-accordion-panel>
+      <div title>
+          <i class="dropdown icon"></i>
+          Keywords
+      </div>
+      <div content>
+          <div *ngIf="item.keywords && item.keywords.length > 0">
+              <div class="ui grid" *ngFor="let keywords of item.keywords; let i = index; trackBy:customTrackBy">
+                  <div class="fifteen wide column">
+                      <div class="ui fluid input">
+                          <input type="text" [ngModel]="item.keywords[i]" (ngModelChange)="item.keywords[i] = $event">
+                      </div>
+                  </div>
+                  <div class="one wide column">
+                      <button class="ui red icon button crud" (click)="item.keywords.splice(i,1)">
+                        <i class="ui trash icon"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <div class="ui green button" (click)="addKeyword()">Add Keyword</div>
+      </div>
+</sui-accordion-panel>
