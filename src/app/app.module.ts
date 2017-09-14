@@ -14,7 +14,7 @@ import { EducationEditorComponent } from './education-editor/education-editor.co
 import { ExaminationEditorComponent } from './examination-editor/examination-editor.component';
 import { SchoolEditorComponent } from './school-editor/school-editor.component';
 
-import {SuiModule} from 'ng2-semantic-ui';
+import {SuiModule, SuiSelectModule} from 'ng2-semantic-ui';
 import { SubjectEditorComponent } from './subject-editor/subject-editor.component';
 import { JobWorkEditorComponent } from './job-work-editor/job-work-editor.component';
 import { HighlightEditorComponent } from './highlight-editor/highlight-editor.component';
@@ -53,6 +53,7 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     SuiModule,
+    SuiSelectModule,
     RouterModule.forRoot(routes),
     FormsModule,
     HttpModule,

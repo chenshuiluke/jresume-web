@@ -15,5 +15,17 @@
     <i class="download icon"></i>
     Download PDF
 </button>
+<sui-select class="selection"
+[(ngModel)]="selectedTheme"
+[options]="themes"
+[labelField]="'theme'"
+[isSearchable]="true"
+[isDisabled]="loadingThemes"
+#select>
+    <sui-select-option *ngFor="let option of select.filteredOptions"
+            [value]="option">
+    </sui-select-option>
+</sui-select>
 <div class="ui active loader text" *ngIf="loading">Downloading...</div>
+
 <router-outlet></router-outlet>
