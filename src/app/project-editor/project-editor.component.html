@@ -1,0 +1,22 @@
+<div *ngIf="resume.projects && resume.projects.length > 0">
+  <div class="ui segment" *ngFor="let project of resume.projects; let i = index; trackBy:customTrackBy">
+   <div class="ui two fields">
+     <div class="ui field">
+       <label>Name</label>
+       <input [ngModel]="resume.projects[i].name" (ngModelChange)="resume.projects[i].name = $event">
+     </div>
+     <div class="ui field">
+       <label>URL</label>
+       <input [ngModel]="resume.projects[i].url" (ngModelChange)="resume.projects[i].url = $event">
+     </div>          
+   </div>
+   <div class="ui field">
+     <label>Description</label>
+     <textarea [ngModel]="resume.projects[i].description" (ngModelChange)="resume.projects[i].description = $event"></textarea>
+   </div>
+   <highlight-editor [item]="resume.projects[i]"></highlight-editor>
+   <keyword-editor [item]="resume.projects[i]"></keyword-editor>
+   <div class="ui fluid red button" (click)="deleteProject(i)">Delete Project</div>
+  </div>
+ </div>
+ <div class="ui green button" (click)="addProject()">Add Project</div>

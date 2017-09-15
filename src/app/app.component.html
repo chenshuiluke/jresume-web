@@ -1,20 +1,22 @@
-<button class="ui green button" [routerLink]="'/editor'">
-    <i class="text cursor icon"></i> 
-    Edit
-</button>
-<button class="ui green button" [routerLink]="'/preview'" (click)="preview()">
-    <i class="play icon"></i>
-    Preview
-</button>
+<div class="ui buttons">
+    <button class="ui green button" [routerLink]="'/editor'">
+        <i class="text cursor icon"></i> 
+        Edit
+    </button>
+    <button class="ui green button" [routerLink]="'/preview'" (click)="preview()">
+        <i class="play icon"></i>
+        Preview
+    </button>
 
-<button class="ui green button" (click)="downloadHTML()">
+    <button class="ui green button" (click)="downloadHTML()">
+            <i class="download icon"></i>
+            Download HTML
+    </button>
+    <button class="ui green button" (click)="downloadPDF()">
         <i class="download icon"></i>
-        Download HTML
-</button>
-<button class="ui green button" (click)="downloadPDF()">
-    <i class="download icon"></i>
-    Download PDF
-</button>
+        Download PDF
+    </button>
+</div>
 <sui-select class="selection"
 [(ngModel)]="selectedTheme"
 [options]="themes"
