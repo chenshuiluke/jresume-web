@@ -1,48 +1,51 @@
-<div class="ui buttons">
-    <button class="ui green button" [routerLink]="'/editor'">
-        <i class="text cursor icon"></i> 
-        Edit
-    </button>
-    <button class="ui green button" [routerLink]="'/preview'" (click)="preview()">
-        <i class="play icon"></i>
-        Preview
-    </button>
+<button class="ui green button" [routerLink]="'/editor'">
+    <i class="text cursor icon"></i> 
+    Edit
+</button>
+<button class="ui green button" [routerLink]="'/preview'" (click)="preview()">
+    <i class="play icon"></i>
+    Preview
+</button>
 
-    <button class="ui green button" (click)="downloadHTML()">
-            <i class="download icon"></i>
-            Download HTML
-    </button>
-    <button class="ui green button" (click)="downloadPDF()">
+<button class="ui green button" (click)="downloadHTML()">
         <i class="download icon"></i>
-        Download PDF
-    </button>
+        Download HTML
+</button>
+<button class="ui green button" (click)="downloadPDF()">
+    <i class="download icon"></i>
+    Download PDF
+</button>
 
-    <sui-select class="red floating labeled icon button"
-    [icon]="'paint brush'"
-    [(ngModel)]="selectedTheme"
-    [options]="themes"
-    [isSearchable]="true"
-    [isDisabled]="loadingThemes"
-    [placeholder]="'Select Theme'"
-    #select>
-        <sui-select-option *ngFor="let option of select.filteredOptions"
-                [value]="option">
-        </sui-select-option>
-    </sui-select>    
-</div>
+<sui-select class="red floating labeled icon button"
+[icon]="'paint brush'"
+[(ngModel)]="selectedTheme"
+[options]="themes"
+[isSearchable]="true"
+[isDisabled]="loadingThemes"
+[placeholder]="'Select Theme'"
+#select>
+    <sui-select-option *ngFor="let option of select.filteredOptions"
+            [value]="option">
+    </sui-select-option>
+</sui-select>  
 <br />
-<div class="ui buttons">
-    <button class="ui yellow button" (click)="exportJSON()">
-        <i class="cloud download icon"></i>
-        Export JSON Resume
-    </button>    
-    <div>
-        <label class="ui yellow icon button" (click)="triggerJSONInputClick()">
-            <i class="cloud upload icon"></i>
-            Import JSON Resume</label>
-        <input #jsoninput type="file" id="file" style="display:none" onclick="this.value = null" (change)="importJSON($event)">
-    </div>
-</div>
+
+<button class="ui yellow button" (click)="exportJSON()">
+    <i class="cloud download icon"></i>
+    Export JSON Resume
+</button>    
+
+<label class="ui yellow icon button" (click)="triggerJSONInputClick()">
+    <i class="cloud upload icon"></i>
+    Import JSON Resume</label>
+<input #jsoninput type="file" id="file" style="display:none" onclick="this.value = null" (change)="importJSON($event)">
+
+
+<a class="ui blue button" href="https://github.com/chenshuiluke/jresume-web" target="_blank">
+    <i class="github icon">
+    </i>
+    Fork me on GitHub
+</a>
 
 <div class="ui active loader text" *ngIf="loading">Downloading...</div>
 
