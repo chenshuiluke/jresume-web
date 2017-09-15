@@ -27,6 +27,7 @@
     "jquery": "^3.2.1",
     "ng2-semantic-ui": "^0.9.6",
     "ngx-filesaver": "0.0.2",
+    "remodal": "^1.1.1",
     "rxjs": "^5.4.2",
     "semantic-ui-css": "^2.2.12",
     "zone.js": "^0.8.14"

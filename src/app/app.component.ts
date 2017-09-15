@@ -5,6 +5,9 @@ import { Http, Response, RequestOptions, ResponseContentType } from '@angular/ht
 import { environment } from '../environments/environment';
 import { FileSaverService } from 'ngx-filesaver';
 import { plainToClass } from "class-transformer";
+
+declare var jquery:any;
+declare var $ :any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -16,6 +19,7 @@ export class AppComponent implements OnInit{
   loadingThemes:boolean;
   title = 'app';
   loading:boolean = false;
+  tutorialModal:any;
   @ViewChild('jsoninput') jsoninput:ElementRef;
 
   constructor(@Inject(Resume) private resume, 
@@ -27,6 +31,12 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     this.getThemeList();
+    this.tutorialModal = $('[data-remodal-id=modal]').remodal();
+    if(!localStorage.jresume){
+      this.tutorialModal.open();
+      localStorage.jresume="yes";
+    }
+    
   }
 
   clearEmptyResumeParams(o) {
@@ -134,5 +144,9 @@ export class AppComponent implements OnInit{
         bytes[i] = json.charCodeAt(i);
     this._FileSaverService.save(new Blob([bytes], {type: "application/json"}), "resume.json");
 
+  }
+
+  showHelp(){
+    this.tutorialModal.open();
   }
 }

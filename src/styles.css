@@ -45,3 +45,7 @@ iframe{
 #github-banner-img{
     z-index:10;
 }
+
+ol{
+    text-align:left;
+}

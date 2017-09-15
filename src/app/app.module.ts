@@ -14,7 +14,7 @@ import { EducationEditorComponent } from './education-editor/education-editor.co
 import { ExaminationEditorComponent } from './examination-editor/examination-editor.component';
 import { SchoolEditorComponent } from './school-editor/school-editor.component';
 
-import {SuiModule, SuiSelectModule} from 'ng2-semantic-ui';
+import {SuiModule, SuiSelectModule,SuiModalModule} from 'ng2-semantic-ui';
 import { SubjectEditorComponent } from './subject-editor/subject-editor.component';
 import { JobWorkEditorComponent } from './job-work-editor/job-work-editor.component';
 import { HighlightEditorComponent } from './highlight-editor/highlight-editor.component';
@@ -22,6 +22,7 @@ import { FileSaverModule } from 'ngx-filesaver';
 import { KeywordEditorComponent } from './keyword-editor/keyword-editor.component';
 import { VolunteerWorkEditorComponent } from './volunteer-work-editor/volunteer-work-editor.component';
 import { ProjectEditorComponent } from './project-editor/project-editor.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 const routes:Routes = [
   {
@@ -50,11 +51,13 @@ const routes:Routes = [
     HighlightEditorComponent,
     KeywordEditorComponent,
     VolunteerWorkEditorComponent,
-    ProjectEditorComponent
+    ProjectEditorComponent,
+    TutorialComponent
   ],
   imports: [
     BrowserModule,
     SuiModule,
+    SuiModalModule,
     SuiSelectModule,
     RouterModule.forRoot(routes),
     FormsModule,
