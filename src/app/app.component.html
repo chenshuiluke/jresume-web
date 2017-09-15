@@ -30,12 +30,12 @@
 </sui-select>  
 <br />
 
-<button class="ui yellow button" (click)="exportJSON()">
+<button class="ui green button" (click)="exportJSON()">
     <i class="cloud download icon"></i>
     Export JSON Resume
 </button>    
 
-<label class="ui yellow icon button" (click)="triggerJSONInputClick()">
+<label class="ui green icon button" (click)="triggerJSONInputClick()">
     <i class="cloud upload icon"></i>
     Import JSON Resume</label>
 <input #jsoninput type="file" id="file" style="display:none" onclick="this.value = null" (change)="importJSON($event)">
@@ -45,6 +45,12 @@
     <i class="github icon">
     </i>
     Fork me on GitHub
+</a>
+
+<a class="ui large yellow button" href="https://salt.bountysource.com/teams/jresume" target="_blank">
+    <i class="money icon">
+    </i>
+    Donate to Project
 </a>
 
 <div class="ui active loader text" *ngIf="loading">Downloading...</div>
