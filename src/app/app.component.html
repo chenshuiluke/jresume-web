@@ -17,7 +17,7 @@
         Download PDF
     </button>
 
-    <sui-select class="yellow floating labeled icon button"
+    <sui-select class="red floating labeled icon button"
     [icon]="'paint brush'"
     [(ngModel)]="selectedTheme"
     [options]="themes"
@@ -30,16 +30,15 @@
         </sui-select-option>
     </sui-select>    
 </div>
+<br />
 <div class="ui buttons">
-    <div>
-        <label for="file" class="ui yellow icon button">
-            <i class="file icon"></i>
-            Export JSON Resume</label>
-        <input type="file" style="display:none">
-    </div>
+    <button class="ui yellow button" (click)="exportJSON()">
+        <i class="cloud download icon"></i>
+        Export JSON Resume
+    </button>    
     <div>
         <label class="ui yellow icon button" (click)="triggerJSONInputClick()">
-            <i class="file icon"></i>
+            <i class="cloud upload icon"></i>
             Import JSON Resume</label>
         <input #jsoninput type="file" id="file" style="display:none" onclick="this.value = null" (change)="importJSON($event)">
     </div>

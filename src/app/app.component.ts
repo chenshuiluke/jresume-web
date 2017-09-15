@@ -126,4 +126,13 @@ export class AppComponent implements OnInit{
 
     myReader.readAsText(file);    
   }
+
+  exportJSON(){
+    let json = JSON.stringify(this.resume, null, 4);
+    var bytes = new Uint8Array(json.length);
+    for (var i=0; i<json.length; i++)
+        bytes[i] = json.charCodeAt(i);
+    this._FileSaverService.save(new Blob([bytes], {type: "application/json"}), "resume.json");
+
+  }
 }
