@@ -1,9 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Renderer, ElementRef, ViewChild } from '@angular/core';
 import { Resume } from './models/resume.model';
 import { ResumeResponse } from './models/resume-response.model';
 import { Http, Response, RequestOptions, ResponseContentType } from '@angular/http';
 import { environment } from '../environments/environment';
 import { FileSaverService } from 'ngx-filesaver';
+import { plainToClass } from "class-transformer";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,8 +16,9 @@ export class AppComponent implements OnInit{
   loadingThemes:boolean;
   title = 'app';
   loading:boolean = false;
+  @ViewChild('jsoninput') jsoninput:ElementRef;
 
-  constructor(@Inject(Resume) private resume:Resume, 
+  constructor(@Inject(Resume) private resume, 
   @Inject(ResumeResponse) private resume_response:ResumeResponse, 
   private http:Http,
   private _FileSaverService: FileSaverService){
@@ -43,6 +45,7 @@ export class AppComponent implements OnInit{
 
   preview(){
     this.clearEmptyResumeParams(this.resume);
+    this.resume_response.setHtml(`<div class="ui active text loader">Loading</div>`);
     console.log(JSON.stringify(this.resume));
     this.http.post(`${environment.host}${environment.resume_url}/${this.selectedTheme}`, this.resume)
       .subscribe((response:Response) => {
@@ -87,5 +90,40 @@ export class AppComponent implements OnInit{
       console.log(response.json());
       this.themes = response.json().themes;
     });   
+  }
+
+  triggerJSONInputClick(){
+    let event = new MouseEvent('click', {bubbles:true});
+    this.jsoninput.nativeElement.dispatchEvent(event);
+  }
+
+  importJSON(event:any){
+    let value = event.target;
+    var file:File = value.files[0]; 
+    var myReader:FileReader = new FileReader();
+   
+    myReader.onloadend = (e) =>{
+      let result = myReader.result;
+      console.log(myReader.result);
+      try{
+        let json_obj = JSON.parse(result);
+        console.log("Finished import");
+        let imported_resume = plainToClass(Resume, json_obj);
+        console.log(imported_resume);
+        for (var property in imported_resume) {
+          if (imported_resume.hasOwnProperty(property)) {
+              this.resume[property] = imported_resume[property];
+          }
+        }        
+      }
+      catch(e){
+        if(e instanceof SyntaxError){
+          console.log("Imported JSON is not valid!")
+        }
+      }     
+      
+    }
+
+    myReader.readAsText(file);    
   }
 }
