@@ -7,7 +7,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./resume-preview.component.css']
 })
 export class ResumePreviewComponent implements OnInit {
-  html:any = `<div class="ui active text loader">Loading</div>`;
+  html:any;
   @ViewChild('#dataDiv') dataDiv:ElementRef;
   constructor(@Inject(ResumeResponse) private resume_response:ResumeResponse, private sanitizer: DomSanitizer) { 
     this.resume_response.emitter.subscribe((html) => {

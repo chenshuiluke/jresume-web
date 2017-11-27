@@ -55,7 +55,7 @@ export class AppComponent implements OnInit{
 
   preview(){
     this.clearEmptyResumeParams(this.resume);
-    this.resume_response.setHtml(`<div class="ui active text loader">Loading</div>`);
+    //this.resume_response.setHtml();
     console.log(JSON.stringify(this.resume));
     this.http.post(`${environment.host}${environment.resume_url}/${this.selectedTheme}`, this.resume)
       .subscribe((response:Response) => {
